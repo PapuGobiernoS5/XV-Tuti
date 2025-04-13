@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invitación XV Años</title>
+  <link rel="stylesheet" href="styles/styles.css"/>
+</head>
+
+<body>
+  <header class="hero mainTitle">
+    <div class="overlay">
+      <h1>Mis XV Años</h1>
+      <h2>Kassandra Yeriley Hernandez Barrera</h2>
+      <p>18 de Abril del 2025</p>
+    </div>
+  </header>
+
+  <section id="invitacion" class="section title2">
+    <h4>Dicen que hay momentos en la vida que se vuelven inolvidables…
+      Hoy quiero invitarte a compartir conmigo uno de ellos.
+      
+      Con alegría en el corazón y mucha emoción, te invito a celebrar mis 15 años.
+      Un día soñado, rodeado de personas que hacen mi mundo más bonito.
+      
+      Tu presencia hará de este día algo aún más especial.
+      Gracias por ser parte de mi vida.
+      
+      💫 Te espero con mucho cariño.
+      
+      </h4>
+  </section>
+
+  <section id="evento" class="section title">
+    <h3>Detalles del Evento</h3>
+    <p><strong>Comida:</strong> 3:00 PM</p>
+  </section>
+
+  <section id="countdown" class="section title">
+    <h3>Cuenta Regresiva</h3>
+    <div id="timer"></div>
+  </section>
+
+  <section id="ubicacion" class="section title">
+    <h3>Ubicación</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d454.1395471043373!2d-98.82461922395245!3d20.164076460821768!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2smx!4v1744258918016!5m2!1ses!2smx" 
+        width="1500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <section id="rsvp" class="section title">
+    <h3>Confirmanos tu Asistencia</h3>
+    <form id="rsvpForm">
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <select id="asistencia" required>
+        <option value="">¿Asistirás?</option>
+        <option value="Sí">Sí</option>
+        <option value="No">No</option>
+      </select>
+      <textarea id="mensaje" placeholder="Mensaje opcional"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="formMessage"></div>
+  </section>
+
+  <footer class="section mainTitle">
+    <p>Con cariño, Kassandra 💖</p>
+  </footer>
+
+  <script src="scripts/script.js"></script>
+</body>
+</html>
