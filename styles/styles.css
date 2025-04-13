@@ -297,18 +297,21 @@ form button:hover {
 #musica {
   position: fixed;
   bottom: 150px;
-  right: 20px;
+  left: 20px; /* Alineación a la izquierda */
   background-color: rgba(0, 0, 0, 0.6);
   padding: 10px 15px;
   border-radius: 20px;
   font-size: 17px;
   z-index: 999;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: auto; /* Ajustar el ancho automáticamente */
+  height: auto; /* Ajustar la altura automáticamente */
+  flex-shrink: 0; /* No permitir que se encoja */
 }
 
 #musica button {
@@ -318,86 +321,23 @@ form button:hover {
   cursor: pointer;
   font-size: 20px;
   padding: 5px;
-  max-width: 50px;  /* Establecer un tamaño máximo */
-  max-height: 50px;  /* Establecer un tamaño máximo */
-  width: 100%;  /* Hacer que ocupe el 100% del espacio disponible hasta el máximo */
-  height: auto;  /* Mantener la proporción del tamaño */
-  box-sizing: border-box; /* Asegurar que el padding no lo estire */
+  width: auto; /* El ancho del botón será automático */
+  height: auto; /* La altura del botón será automática */
 }
 
 #musica img {
-  width: 30px;
-  height: 30px;
+  width: 30px; /* Ajuste de tamaño del icono */
+  height: 30px; /* Ajuste de tamaño del icono */
 }
 
-#playIcon, #pauseIcon {
-  width: 30px;
-  height: 30px;
-  display: none; 
-}
-
-#playIcon {
-  display: block; 
-}
-
-/* === Música de Fondo === */
-#musica {
-  position: fixed;
-  bottom: 150px;
-  right: 20px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 10px 15px;
-  border-radius: 20px;
-  font-size: 17px;
-  z-index: 999;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  backdrop-filter: blur(5px);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#musica button {
-  background-color: transparent;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  padding: 5px;
-}
-
-/* === Cuenta Regresiva === */
-#countdown {
-  width: 200px;
-  height: 100px;
-  font-family: "Ballitar";
-  color: white;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 10px 15px;
-  border-radius: 20px;
-  font-size: 14px;
-  z-index: 999;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  backdrop-filter: blur(5px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-/* === Responsividad para la cuenta regresiva y botones === */
+/* Responsividad para el botón de música */
 @media screen and (max-width: 768px) {
-  /* Asegurarnos de que el botón de música y el contador no desaparezcan */
   #musica {
-    bottom: 120px; /* Ajustar la posición del botón de música */
-    right: 10px;  /* Ajustar la posición en pantallas pequeñas */
+    bottom: 120px;
+    left: 10px; /* Ajustar más cerca del borde izquierdo */
     padding: 8px 10px;
+    width: 50px; /* Fijamos un ancho específico para evitar que se estire */
+    height: 50px; /* Ajustar la altura también */
   }
 
   #musica button {
@@ -408,20 +348,44 @@ form button:hover {
     width: 25px; /* Ajustar el tamaño de los íconos */
     height: 25px;
   }
+}
 
-  /* Asegurar que el contador también sea visible */
+/* === Cuenta regresiva === */
+#countdown {
+  width: 200px;
+  height: 100px;
+  font-family: "Ballitar";
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* Alineación a la izquierda */
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Responsividad para la cuenta regresiva */
+@media screen and (max-width: 768px) {
   #countdown {
-    display: block; /* Asegurarnos de que esté visible */
-    font-size: 16px; /* Ajustar el tamaño de la fuente */
-    width: 150px; /* Ajustar el tamaño del contenedor */
-    height: 80px; /* Ajustar la altura */
-    padding: 6px 8px; /* Ajustar el relleno */
-    bottom: 10px; /* Posición ajustada para móviles */
-    right: 10px;
+    width: 150px; /* Ajustar el tamaño del contador */
+    height: 80px; /* Ajustar la altura del contador */
+    font-size: 16px; /* Aumentar el tamaño de la fuente */
+    padding: 6px 8px;
+    bottom: 10px;
+    left: 10px; /* Ajustar la posición */
   }
 
-  /* Ajustar el contenedor y centrar el contenido */
-  #countdown-mobile {
-    display: none; /* Asegurarse de que la versión de escritorio no se muestre */
+  #countdown span {
+    font-size: 20px; /* Aumentar el tamaño de los números */
   }
 }
