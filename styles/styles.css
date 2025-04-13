@@ -1,0 +1,340 @@
+/* === Fuentes Personalizadas === */
+@font-face {
+  font-family: "BridgetLily";
+  src: url("fonts/BridgetLily.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "AstonScript";
+  src: url("fonts/Aston Script.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Valentina";
+  src: url("fonts/Hello Valentina.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Ananda";
+  src: url("fonts/Ananda Personal Use.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "AnandaBlack";
+  src: url("fonts/Ananda Black Personal Use.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Madina";
+  src: url("fonts/Madina.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Ballitar";
+  src: url("fonts/Ballitar City.otf") format("truetype");
+}
+
+/* === Estilos Globales === */
+body {
+  background-image: url("images/tuti11.jpg");
+  background-size: cover;
+  font-family: 'BridgetLily', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* === Hero Banner === */
+.hero {
+  background-image: url("images/tuti.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* === Secciones Generales === */
+.section {
+  margin: 1px 0;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* === Títulos y Textos === */
+.title {
+  font-family: "AstonScript", cursive;
+  font-size: 50px;
+  color: white;
+}
+
+.title strong {
+  font-family: "AstonScript";
+  font-size: 50px;
+  color: white;
+}
+
+.title p {
+  font-family: "Madina";
+  font-size: 50px;
+  color: white;
+}
+
+.title h3,
+.title iframe {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.mainTitle h1,
+.mainTitle {
+  font-family: "BridgetLily", cursive;
+  font-size: 50px;
+  color: white;
+}
+
+/* === Sección Discurso === */
+.seccion-discurso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.discurso {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 800px;
+  width: 80%;
+}
+
+.discurso h4 {
+  font-family: "AstonScript", cursive;
+  font-size: 35px;
+  color: white;
+  text-align: center;
+}
+
+/* === Formulario de Asistencia === */
+form {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido */
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  backdrop-filter: blur(5px); /* Efecto de desenfoque detrás */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+form input,
+form select,
+form textarea,
+form button {
+  display: block;
+  width: 90%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.8); /* Campos más suaves */
+  color: #333;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+form button {
+  background-color: burlywood;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #d2a679;
+}
+
+/* === Cuenta Regresiva flotante === */
+#countdown {
+  width: 200px;
+  height: 100px;
+  font-family: "Ballitar";
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+}
+
+/* === Galeria === */
+#galeria {
+  display: flex;
+  width: 800px;
+  height: 530px;
+}
+
+#galeria img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .5;
+  transition: .5s ease;
+}
+
+#galeria img:hover {
+  cursor: crosshair;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+/* === Responsividad === */
+@media screen and (max-width: 768px) {
+  /* Ajustar el tamaño de la fuente en pantallas pequeñas */
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .hero h2 {
+    font-size: 25px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 35px;
+  }
+
+  .seccion-discurso {
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  /* Ajustar la cuenta regresiva */
+  #countdown {
+    width: 150px;
+    font-size: 12px;
+  }
+
+  /* Ajustar el formulario */
+  form input,
+  form select,
+  form textarea,
+  form button {
+    width: 95%;
+    padding: 8px;
+  }
+
+  /* Ajustar la sección de ubicación */
+  #ubicacion iframe {
+    width: 100%;
+    height: 300px;
+  }
+
+  /* Ajustar la imagen de fondo en la hero */
+  .hero {
+    background-position: center;
+  }
+
+  .discurso h4 {
+    font-size: 28px; /* Reducir el tamaño de fuente del discurso */
+  }
+
+  .discurso {
+    padding: 15px;
+    width: 95%; /* Asegura que se ajuste bien */
+  }
+}
+
+/* === Animación de Fade === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Música de Fondo === */
+#musica {
+  position: fixed;
+  bottom: 150px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 17px;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#musica button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+}
+
+#musica img {
+  width: 30px;
+  height: 30px;
+}
+
+#playIcon, #pauseIcon {
+  width: 30px;
+  height: 30px;
+  display: none; 
+}
+
+#playIcon {
+  display: block; 
+}
+
+
+

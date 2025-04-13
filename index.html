@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invitación XV Años</title>
+  <link rel="stylesheet" href="styles/styles.css"/>
+</head>
+
+<body>
+  
+  <!-- Encabezado -->
+  <header class="hero mainTitle">
+    <div class="overlay">
+      <h1>Mis XV Años</h1>
+      <h2>Kassandra Yeriley Hernandez Barrera</h2>
+      <p>19 de Abril del 2025</p>
+    </div>
+  </header>
+
+  <!-- Invitación / Discurso -->
+  <section id="invitacion" class="seccion-discurso fade-in">
+    <div class="discurso">
+      <h4>
+        Dicen que hay momentos en la vida que se vuelven inolvidables…  
+        Hoy quiero invitarte a compartir conmigo uno de ellos.
+        <br><br>
+        Con alegría en el corazón y mucha emoción, te invito a celebrar mis XV años.  
+        Un día soñado, rodeado de personas que hacen mi mundo más bonito.
+        <br><br>
+        Tu presencia hará de este día algo aún más especial.  
+        Gracias por ser parte de mi vida.
+        <br><br>
+        💫 Te espero con mucho cariño.
+      </h4>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <center>
+  <section id="galeria" class="fade-in">
+    <img src="styles/images/tuti3.jpg"></img>
+    <img src="styles/images/tuti4.jpg"></img>
+    <img src="styles/images/tuti5.jpg"></img>
+    <img src="styles/images/tuti6.jpg"></img>
+    <img src="styles/images/tuti7.jpg"></img>
+    <img src="styles/images/tuti8.jpg"></img>
+    <img src="styles/images/tuti9.jpg"></img>
+    <img src="styles/images/tuti10.jpg"></img>
+  </section>
+  </center>
+
+  <!-- Detalles del Evento -->
+  <section id="evento" class="section title fade-in">
+    <h3>Detalles del Evento</h3>
+    <p><strong>Comida:</strong> 3:00 PM</p>
+  </section>
+
+  <!-- Cuenta Regresiva -->
+  <section id="countdown" class="section title fade-in">
+    <h3>Cuenta Regresiva</h3>
+    <div id="timer"></div>
+  </section>
+
+  <!-- Ubicación -->
+  <section id="ubicacion" class="section title fade-in">
+    <h3>Ubicación</h3>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d454.1395471043373!2d-98.82461922395245!3d20.164076460821768!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2smx!4v1744258918016!5m2!1ses!2smx" 
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <!-- Confirmación de Asistencia -->
+  <section id="rsvp" class="section title fade-in">
+    <h3>Confírmanos tu Asistencia</h3>
+    <form id="rsvpForm">
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <select id="asistencia" required>
+        <option value="">¿Asistirás?</option>
+        <option value="Sí">Sí</option>
+        <option value="No">No</option>
+      </select>
+      <textarea id="mensaje" placeholder="Mensaje opcional"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="formMessage"></div>
+  </section>
+
+  <!-- Música de fondo -->
+  <section id="musica" class="section title">
+    <h3>Golden Hour - Jvke</h3>
+    <audio id="audioPlayer" src="styles/audios/Golden Hour - Jvke.mp3" autoplay loop></audio>
+    <button id="toggleMusic">
+      <img id="playIcon" src="styles/icons/play.png" alt="Play Icon"/>
+      <img id="pauseIcon" src="styles/icons/pause.png" alt="Pause Icon"/>
+    </button>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="section mainTitle">
+    <p>Con cariño, Kassandra 💖</p>
+  </footer>
+
+  <script src="scripts/script.js"></script>
+
+</body>
+</html>
