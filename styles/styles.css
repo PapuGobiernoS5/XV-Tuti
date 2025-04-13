@@ -41,6 +41,7 @@ body {
   font-family: 'BridgetLily', cursive;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Para evitar desbordes horizontales */
 }
 
 body::before {
@@ -182,37 +183,19 @@ form button:hover {
   background-color: #d2a679;
 }
 
-/* === Cuenta Regresiva flotante === */
-#countdown {
-  width: 200px;
-  height: 100px;
-  font-family: "Ballitar";
-  color: white;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 10px 15px;
-  border-radius: 20px;
-  font-size: 14px;
-  z-index: 999;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  backdrop-filter: blur(5px);
-}
-
 /* === Galeria === */
 #galeria {
   display: flex;
-  width: 800px;
-  height: 530px;
+  width: 600px;
+  height: 430px;
 }
 
 #galeria img {
-  width: 0px;
+  width: 0;
   flex-grow: 1;
   object-fit: cover;
-  opacity: .5;
-  transition: .5s ease;
+  opacity: 0.5;
+  transition: 0.5s ease;
 }
 
 #galeria img:hover {
@@ -280,6 +263,22 @@ form button:hover {
     padding: 15px;
     width: 95%; /* Asegura que se ajuste bien */
   }
+
+  /* Ajustar la música de fondo para pantallas pequeñas */
+  #musica {
+    bottom: 120px; /* Subir el botón de música */
+    right: 10px;
+    padding: 8px 10px;
+  }
+
+  #musica button {
+    font-size: 18px; /* Reducir el tamaño de los botones */
+  }
+
+  #musica img {
+    width: 25px; /* Ajustar el tamaño de los íconos */
+    height: 25px;
+  }
 }
 
 /* === Animación de Fade === */
@@ -319,6 +318,11 @@ form button:hover {
   cursor: pointer;
   font-size: 20px;
   padding: 5px;
+  max-width: 50px;  /* Establecer un tamaño máximo */
+  max-height: 50px;  /* Establecer un tamaño máximo */
+  width: 100%;  /* Hacer que ocupe el 100% del espacio disponible hasta el máximo */
+  height: auto;  /* Mantener la proporción del tamaño */
+  box-sizing: border-box; /* Asegurar que el padding no lo estire */
 }
 
 #musica img {
@@ -336,5 +340,88 @@ form button:hover {
   display: block; 
 }
 
+/* === Música de Fondo === */
+#musica {
+  position: fixed;
+  bottom: 150px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 17px;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+#musica button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+}
 
+/* === Cuenta Regresiva === */
+#countdown {
+  width: 200px;
+  height: 100px;
+  font-family: "Ballitar";
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* === Responsividad para la cuenta regresiva y botones === */
+@media screen and (max-width: 768px) {
+  /* Asegurarnos de que el botón de música y el contador no desaparezcan */
+  #musica {
+    bottom: 120px; /* Ajustar la posición del botón de música */
+    right: 10px;  /* Ajustar la posición en pantallas pequeñas */
+    padding: 8px 10px;
+  }
+
+  #musica button {
+    font-size: 18px; /* Reducir el tamaño del botón */
+  }
+
+  #musica img {
+    width: 25px; /* Ajustar el tamaño de los íconos */
+    height: 25px;
+  }
+
+  /* Asegurar que el contador también sea visible */
+  #countdown {
+    display: block; /* Asegurarnos de que esté visible */
+    font-size: 16px; /* Ajustar el tamaño de la fuente */
+    width: 150px; /* Ajustar el tamaño del contenedor */
+    height: 80px; /* Ajustar la altura */
+    padding: 6px 8px; /* Ajustar el relleno */
+    bottom: 10px; /* Posición ajustada para móviles */
+    right: 10px;
+  }
+
+  /* Ajustar el contenedor y centrar el contenido */
+  #countdown-mobile {
+    display: none; /* Asegurarse de que la versión de escritorio no se muestre */
+  }
+}
